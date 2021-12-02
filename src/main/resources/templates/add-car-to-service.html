@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{../css/register.css}" rel="stylesheet" />
+</head>
+<body>
+<body>
+<h2 class="mb-5">New Car</h2>
+
+<div class="container my-5">
+    <br>
+    <div class="row">
+        <div class="col-md-6">
+            <form action="#" th:action="@{/add-car-to-service/{id}(id=${car.id})}" th:object="${car}" method="post">
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="id" class="col-form-label">Id of car</label>
+                        <input type="number" th:field="*{id}" class="form-control" id="id" placeholder="Id">
+                        <span th:if="${#fields.hasErrors('id')}" th:errors="*{id}" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="email" class="col-form-label">Model</label>
+                        <input type="text" th:field="*{service.name}" class="form-control" id="email" placeholder="Service name">
+                        <span class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mt-5">
+                        <input type="submit" class="btn btn-primary" value="Add Car to service">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>

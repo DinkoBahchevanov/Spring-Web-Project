@@ -1,41 +1,128 @@
-body {
-    background-color: #0486ea;
+* {
     margin: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-    background-image: url("../images/Transfile.jpg");
+    padding: 0;
+    list-style-type: none;
+}
+body{
+    /*background: #313239;*/
+    background-image: url("../images/IIIT Delhi.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
     height: 99%;
 }
-
-code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 body, html {
-    height: 98%;
+    height: 97%;
 }
-:root {
-    --mainColor: #ff9800;
+
+ul{
+    display: flex;
+    width: 100%;
+    height: 20vh;
+    margin: auto;
+    max-width: 1000px;
+    justify-content: space-between;
+    text-align: center;
+}
+li {
+    padding: 1rem 2rem 1.15rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: #ebebeb;
+    min-width: 80px;
+    margin: auto;
+}
+
+li:hover {
+    background-image: url('https://scottyzen.sirv.com/Images/v/button.png');
+    background-size: 100% 100%;
+    color: #27262c;
+    animation: spring 300ms ease-out;
+    text-shadow: 0 -1px 0 #e3945c;
+    font-weight: bold;
 }
 a {
-    justify-content: center;
-    background: linear-gradient(to bottom, var(--mainColor) 0%, var(--mainColor) 100%);
-    background-position: 0 100%;
-    background-repeat: repeat-x;
-    background-size: 3px 3px;
-    color: #000;
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+    padding: 1.5em;
+    margin: -1.5em;
+}
+
+li:active {
+    transform: translateY(4px);
+}
+
+@keyframes spring {
+    15% {
+        -webkit-transform-origin: center center;
+        -webkit-transform: scale(1.2, 1.1);
+    }
+    40% {
+        -webkit-transform-origin: center center;
+        -webkit-transform: scale(0.95, 0.95);
+    }
+    75% {
+        -webkit-transform-origin: center center;
+        -webkit-transform: scale(1.05, 1);
+    }
+    100% {
+        -webkit-transform-origin: center center;
+        -webkit-transform: scale(1, 1);
+    }
+}
+
+.shameless-plug{
+    position: absolute;
+    bottom: 10px;
+    right: 0;
+    padding: 8px 20px;
+    color: #ccc;
     text-decoration: none;
 }
 
-a:hover {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23ff9800' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");
-    background-position: 0 100%;
-    background-size: auto 6px;
-    background-repeat: repeat-x;
-    text-decoration: none;
-}
+
+
+/*body {*/
+/*    background-color: #0486ea;*/
+/*    margin: 0;*/
+/*    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',*/
+/*    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',*/
+/*    sans-serif;*/
+/*    background-image: url("../images/Transfile.jpg");*/
+/*    background-repeat: no-repeat;*/
+/*    background-position: center;*/
+/*    background-size: cover;*/
+/*    height: 99%;*/
+/*}*/
+
+/*code {*/
+/*    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',*/
+/*    monospace;*/
+/*}*/
+
+/*body, html {*/
+/*    height: 98%;*/
+/*}*/
+/*:root {*/
+/*    --mainColor: #ff9800;*/
+/*}*/
+/*a {*/
+/*    justify-content: center;*/
+/*    background: linear-gradient(to bottom, var(--mainColor) 0%, var(--mainColor) 100%);*/
+/*    background-position: 0 100%;*/
+/*    background-repeat: repeat-x;*/
+/*    background-size: 3px 3px;*/
+/*    color: #000;*/
+/*    text-decoration: none;*/
+/*}*/
+
+/*a:hover {*/
+/*    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg id='squiggle-link' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:ev='http://www.w3.org/2001/xml-events' viewBox='0 0 20 4'%3E%3Cstyle type='text/css'%3E.squiggle{animation:shift .3s linear infinite;}@keyframes shift {from {transform:translateX(0);}to {transform:translateX(-20px);}}%3C/style%3E%3Cpath fill='none' stroke='%23ff9800' stroke-width='2' class='squiggle' d='M0,3.5 c 5,0,5,-3,10,-3 s 5,3,10,3 c 5,0,5,-3,10,-3 s 5,3,10,3'/%3E%3C/svg%3E");*/
+/*    background-position: 0 100%;*/
+/*    background-size: auto 6px;*/
+/*    background-repeat: repeat-x;*/
+/*    text-decoration: none;*/
+/*}*/

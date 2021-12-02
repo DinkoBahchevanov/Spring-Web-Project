@@ -1,6 +1,6 @@
 package com.example.demo.config;
 
-import com.example.demo.services.CustomUserDetailsService;
+import com.example.demo.services.UserDtoDetailsService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
@@ -17,7 +17,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Bean
     public UserDetailsService userDetailsService() {
-        return new CustomUserDetailsService();
+        return new UserDtoDetailsService();
     }
 
     @Bean
@@ -42,7 +42,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-                .antMatchers("/users_details").authenticated()
+                .antMatchers("/users_details", "/add-car", "/add-service", "/services", "/cars").authenticated()
                 .anyRequest().permitAll()
                 .and()
                 .formLogin()

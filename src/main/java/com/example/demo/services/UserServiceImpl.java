@@ -1,6 +1,6 @@
 package com.example.demo.services;
 
-import com.example.demo.entities.CustomUserDetails;
+import com.example.demo.entities.UserLoginDto;
 import com.example.demo.entities.User;
 import com.example.demo.repositories.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -25,7 +25,7 @@ public class UserServiceImpl implements UserService {
         if (user == null) {
             throw new UsernameNotFoundException("User not found");
         }
-        return new CustomUserDetails(user);
+        return new UserLoginDto(user);
     }
 
     public void registerEmployee(User user) {

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:sec="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
-    <title>All Users</title>
+    <title>Title</title>
     <link th:href="@{css/users.css}" rel="stylesheet"/>
     <link th:href="@{css/home.css}" rel="stylesheet" />
 </head>
@@ -12,41 +12,38 @@
     <li><a href="/users">Users</a></li>
     <li><a href="/users_details">Users details</a></li>
     <li><a href="/register">Register</a></li>
-    <li><a href="/cars">Cars</a></li>
-    <li><a href="/services">Services</a></li>
+    <li><a href="/login">Login</a></li>
     <li><a href="/logout">Logout</a></li>
+
 </ul>
 <center><h1>These are all users in my DB!</h1></center>
 
 <div class="center" style="padding-top: 30px; padding-bottom: 30px">
     <table id="users">
         <tr>
-            <th>User id</th>
-            <th>User name</th>
-            <th>User age</th>
-            <th>User salary</th>
-            <th>User password</th>
+            <th>Service id</th>
+            <th>Service name</th>
+            <th>Service street</th>
+            <th>Service rating</th>
             <th>Delete</th>
-            <th>Edit</th>
         </tr>
-        <tr th:each="user : ${users}">
-            <td th:text="${user.id}"></td>
-            <td th:text="${user.name}"></td>
-            <td th:text="${user.age}"></td>
-            <td th:text="${user.salary}"></td>
-            <td th:text="${user.password}"></td>
-            <span><td><a th:href="@{/delete/{id}(id=${user.id})}" style="background-color: red; text-underline: none;
+        <tr th:each="service : ${services}">
+            <td th:text="${service.id}"></td>
+            <td th:text="${service.name}"></td>
+            <td th:text="${service.street}"></td>
+            <td th:text="${service.rating}"></td>
+            <span><td><a th:href="@{/service/delete/{id}(id=${service.id})}" style="background-color: red; text-underline: none;
              z-index: 0;padding: 0em;margin: 0em;"><i>Delete</i></a></td></span>
-            <td><a th:href="@{/edit/{id}(id=${user.id})}"
-                   style="background-color: sienna; text-underline: none;
-             z-index: 0;padding: 0em;margin: 0em;"><i class="fas fa-user-edit ml-2">Edit</i></a></td>
         </tr>
     </table>
     <br>
     <br>
     <br>
 </div>
-
+<center>
+    <a href="/add-service" class="linkCSS"
+       style="text-decoration: none; font-family: Arial, Helvetica, sans-serif; color: #e7d63c; font-size: 2em">Add a service!</a>
+</center>
 <!--<table id="employees">-->
 <!--    <thead>-->
 <!--    <tr>-->

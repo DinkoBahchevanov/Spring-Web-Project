@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link th:href="@{css/register.css}" rel="stylesheet" />
+</head>
+<body>
+<body>
+<h2 class="mb-5">New Car</h2>
+
+<div class="container my-5">
+    <br>
+    <div class="row">
+        <div class="col-md-6">
+            <form action="#" th:action="@{/add-car}" th:object="${car}" method="post">
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="name" class="col-form-label">Brand</label>
+                        <input type="text" th:field="*{brand}" class="form-control" id="name" placeholder="Name">
+                        <span th:if="${#fields.hasErrors('brand')}" th:errors="*{name}" class="text-danger"></span>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label for="email" class="col-form-label">Model</label>
+                        <input type="text" th:field="*{model}" class="form-control" id="email" placeholder="Email">
+                        <span th:if="${#fields.hasErrors('model')}" th:errors="*{email}" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="name" class="col-form-label">Doors</label>
+                    <input type="number" th:field="*{doors}" class="form-control" id="doors" placeholder="Name">
+                    <span th:if="${#fields.hasErrors('brand')}" th:errors="*{doors}" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="name" class="col-form-label">Owner email</label>
+                    <input type="text" th:field="*{user.email}" class="form-control" id="userEmail" placeholder="Name">
+                    <span th:if="${#fields.hasErrors('brand')}" th:errors="*{user.email}" class="text-danger"></span>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 mt-5">
+                        <input type="submit" class="btn btn-primary" value="Add Car">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</body>
+</html>

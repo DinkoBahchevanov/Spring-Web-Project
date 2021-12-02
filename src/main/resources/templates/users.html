@@ -4,11 +4,20 @@
     <meta charset="UTF-8">
     <title>All Users</title>
     <link th:href="@{css/users.css}" rel="stylesheet"/>
+    <link th:href="@{css/home.css}" rel="stylesheet"/>
 </head>
 <body>
+<ul>
+    <li><a href="/">Home</a></li>
+    <li><a href="/users">Users</a></li>
+    <li><a href="/users_details">Users details</a></li>
+    <li><a href="/register">Register</a></li>
+    <li><a href="/login">Login</a></li>
+    <li><a href="/logout">Logout</a></li>
+</ul>
 <center><h1>These are all users in my DB!</h1></center>
 
-<div class="center">
+<div class="center" style="padding-top: 30px; padding-bottom: 30px;">
     <table id="users">
         <tr>
             <th>User name</th>
@@ -27,9 +36,44 @@
 </div>
 <center>
     <a href="/login" class="linkCSS"
-       style="text-decoration: none; font-family: Arial, Helvetica, sans-serif; color: #e7d63c; font-size: 2em">Click here to log in!</a>
+       style="text-decoration: none; font-family: Arial, Helvetica, sans-serif; color: #e7d63c; font-size: 2em">Click
+        here to log in!</a>
 </center>
 
+<br>
+<br>
+<br>
+<center><button onclick="catFact();" style="width: 180px;
+    height: 60px;
+    cursor: pointer;
+    background: transparent;
+    border: 1px solid #91C9FF;
+    outline: none;
+    transition: 1s ease-in-out;">Click for cat fact!</button></center>
+<center><p id="catFact">Expect fact here!</p></center>
+
+<script>
+    function catFact() {
+        const Http = new XMLHttpRequest();
+        const url = 'https://catfact.ninja/fact';
+        Http.open("GET", url);
+        Http.send();
+
+        Http.onreadystatechange = (e) => {
+            var myObj = JSON.parse(Http.responseText);
+            document.getElementById("catFact").innerHTML = myObj.fact;
+        }
+    }
+</script>
+<!--<form method="get" th:action="@{/users/delete/{id}}">-->
+<!--    <div class="input-group input-group-lg">-->
+<!--        <span class="input-group-addon"><i class="fa fa-lock"></i></span>-->
+<!--        <label>-->
+<!--            <input name="id" type="number" class="form-control" placeholder="id">-->
+<!--        </label>-->
+<!--    </div>-->
+<!--    <button type="submit" class="float" value="delete">Delete</button>-->
+<!--</form>-->
 
 <!--<table id="employees">-->
 <!--    <thead>-->
